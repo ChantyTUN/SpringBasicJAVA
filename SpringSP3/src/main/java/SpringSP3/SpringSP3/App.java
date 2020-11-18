@@ -13,7 +13,7 @@ public class App
     	ClassPathXmlApplicationContext context = new
     			ClassPathXmlApplicationContext("applicationContext.xml");
     	
-    	Coach coach=context.getBean("FootBallCoach",Coach.class);
+    	Coach coach=context.getBean("pingPongCoach",Coach.class);
      
       
       System.out.println(coach.getWork());
