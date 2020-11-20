@@ -1,6 +1,6 @@
 package ComputerSP3;
 
-public class corei9 implements CPU {
+public class Corei9 implements CPU {
 
 	public String getDetail() {
 		

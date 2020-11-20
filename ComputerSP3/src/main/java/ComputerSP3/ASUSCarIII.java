@@ -39,6 +39,9 @@ public class ASUSCarIII implements Computer {
 	private GPU gpu;
 	private RAM ram;
 	 
+	public ASUSCarIII() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public ASUSCarIII(MainBoard mainBoard, CPU cpu, GPU gpu, RAM ram) {
 		super();

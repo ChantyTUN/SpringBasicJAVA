@@ -7,7 +7,35 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
   
-	 
+	 <bean id="mBG731GW" 
+	 	class="ComputerSP3.MBG731GW" scope="prototype" />
+
+	<bean id="corei9" 
+		 	class="ComputerSP3.Corei9" scope="prototype"/>
+		 	
+	<bean id="nVIDIAGeForceRTX2070" 
+		 	class="ComputerSP3.NVIDIAGeForceRTX2070" scope="prototype" />
+	
+	<bean id="NVIDIAGeForceRTX2060" 
+		 	class="ComputerSP3.NVIDIAGeForceRTX2060" scope="prototype" />
+
+	<bean id="kingSton" 
+		 	class="ComputerSP3.KingSton" scope="prototype" />
+
+	<bean id="aSUSCarIII" 
+		 	class="ComputerSP3.ASUSCarIII" scope="prototype">
+			<constructor-arg index="0" ref="mBG731GW"/>
+			<constructor-arg index="1" ref="corei9"/>
+			<constructor-arg index="2" ref="nVIDIAGeForceRTX2070"/>
+			<constructor-arg index="3" ref="kingSton"/>
+	</bean>
+	<bean id="aSUSCarIII60" 
+		 	class="ComputerSP3.ASUSCarIII" scope="prototype">
+			<property name="mainBoard" ref="mBG731GW"/>
+			<property name="cpu" ref="corei9"/>
+			<property name="gpu" ref="NVIDIAGeForceRTX2060"/>
+			<property name="ram" ref="kingSton"/>
+	</bean>
 
 
 

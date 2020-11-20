@@ -1,5 +1,7 @@
 package ComputerSP3;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  *
@@ -8,19 +10,31 @@ public class App
 {
     public static void main( String[] args )
     {
-    	MainBoard mainBoard=new MBG731GW();
-    	CPU cpu =new corei9();
-    	GPU gpu =new NVIDIAGeForceRTX2070();
-    	RAM ram =new KingSton();
     	
-    	ASUSCarIII pvuth=new ASUSCarIII(mainBoard, cpu, gpu, ram);
+    	ClassPathXmlApplicationContext context =
+    			new ClassPathXmlApplicationContext("applicationContext.xml");
     	
-    	MainBoard mainBoardp=new MBG731GW();
-    	CPU cpup =new corei9();
-    	GPU gpup =new NVIDIAGeForceRTX2070();
-    	RAM ramp =new KingSton();
-    	ASUSCarIII pesith=new ASUSCarIII(mainBoardp, cpup, gpup, ramp);
+    	ASUSCarIII pvuth=context.getBean("aSUSCarIII",ASUSCarIII.class);
     	
+    	pvuth.setGpu(new NVIDIAGeForceRTX2060());
+    	
+    	ASUSCarIII pesith=context.getBean("aSUSCarIII60",ASUSCarIII.class);
+    	
+    	System.out.println(pvuth.getTechSpecs()+"\n"+pesith.getTechSpecs());
+    	
+//    	MainBoard mainBoard=new MBG731GW();
+//    	CPU cpu =new Corei9();
+//    	GPU gpu =new NVIDIAGeForceRTX2070();
+//    	RAM ram =new KingSton();
+//    	
+//    	ASUSCarIII pvuth=new ASUSCarIII(mainBoard, cpu, gpu, ram);
+//    	
+//    	MainBoard mainBoardp=new MBG731GW();
+//    	CPU cpup =new Corei9();
+//    	GPU gpup =new NVIDIAGeForceRTX2070();
+//    	RAM ramp =new KingSton();
+//    	ASUSCarIII pesith=new ASUSCarIII(mainBoardp, cpup, gpup, ramp);
+//    	
     	
     	/*
     	 * 
@@ -34,13 +48,13 @@ public class App
     	 */
     	//ASUSCarIII pesith=pvuth;
     	
-    	System.out.println("Pvuth Computer:"+pvuth);
-    	System.out.println("MainBoar:"+pvuth.getMainBoard());
-    	System.out.println(pvuth.getTechSpecs());
-    	System.out.println("-------------------");
-    	System.out.println("Pesit Computer:"+pesith);
-    	System.out.println("MainBoar:"+pesith.getMainBoard());
-    	System.out.println(pesith.getTechSpecs());
-    	
+//    	System.out.println("Pvuth Computer:"+pvuth);
+//    	System.out.println("MainBoar:"+pvuth.getMainBoard());
+//    	System.out.println(pvuth.getTechSpecs());
+//    	System.out.println("-------------------");
+//    	System.out.println("Pesit Computer:"+pesith);
+//    	System.out.println("MainBoar:"+pesith.getMainBoard());
+//    	System.out.println(pesith.getTechSpecs());
+//    	
     }
 }
